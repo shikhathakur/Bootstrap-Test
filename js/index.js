@@ -25,7 +25,7 @@ $(document).ready(function() {
             $("#empId").val() +
             '</td><td><button type="button"id="editRow">Edit</button></td><td><button type="button" id="delRow">Delete</button></td><td><button type="button" id="viewRow">View</button></td><td><span class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="tooltip" id="infoTooltip"></span></td></tr>');
     });
-    //===============Hide Update button on click of create employee button=======
+    //===============Hide Update button on click of create employee button=====
     $('#createBtn').click(function() {
         $("#updateBtn").hide();
         $('#saveBtn').show();
