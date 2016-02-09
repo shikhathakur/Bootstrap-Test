@@ -6,7 +6,6 @@ $(document).ready(function() {
         dataType: 'JSON'
 
     });
-
     oCall.success(function(data) {
         var pics = data;
         for (var i = 0; i < pics.Images.length; i++) {
@@ -39,26 +38,20 @@ $(document).ready(function() {
     $('#viewDetails1').click(function() {
         $('#contentID').html($('.details').eq(0).find('p').text());
         $('#myDetails').modal('show');
-
     });
     $('#viewDetails2').click(function() {
         $('#contentID').html($('.details').eq(1).find('p').text());
         $('#myDetails').modal('show');
-
     });
     $('#viewDetails3').click(function() {
         $('#contentID').html($('.details').eq(2).find('p').text());
         $('#myDetails').modal('show');
-
     });
     $('#viewDetails4').click(function() {
         $('#contentID').html($('.details').eq(3).find('p').text());
         $('#myDetails').modal('show');
-
     });
-
     //=================Edit data========================================
-    var cell1, cell2, cell3, cell4;
     $(document).on("click", "#editRow", function() {
         $('#myForm').modal('show');
         $('#saveBtn').hide();
@@ -80,7 +73,6 @@ $(document).ready(function() {
         cell4.text($('#empId').val());
         $('#myForm').modal('hide');
     });
-
     //================View data======================================
     $(document).on("click", "#viewRow", function() {
         $('#myDetails').modal('show');
@@ -94,7 +86,6 @@ $(document).ready(function() {
             title: tr.find('td').eq(1).text()
         });
     });
-
     //==================Table sorting================================
     var f_sl = 1;
     $('#snBtn').click(function() {
@@ -103,16 +94,11 @@ $(document).ready(function() {
         var n = $(this).prevAll().length;
         sortTable(f_sl, n);
     });
-
     function sortTable(f, n) {
         var rows = $('#tableData tbody  tr').get();
-
         rows.sort(function(a, b) {
-
             var A = Number($(a).children('td').eq(n).text());
-
             var B = Number($(b).children('td').eq(n).text());
-
             if (A < B) {
                 return -1 * f;
             }
@@ -121,10 +107,8 @@ $(document).ready(function() {
             }
             return 0;
         });
-
         $.each(rows, function(index, row) {
             $('#tableData').children('tbody').append(row);
         });
     }
-
 });
